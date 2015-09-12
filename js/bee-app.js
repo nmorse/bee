@@ -30,6 +30,7 @@ var BeesMind = (function () {
         }),
         angular2_1.View({
             template: '<h2>Bee\'s mind</h2>\
+  <div id="graph_vis"></div>\
   <input #input1 (keyup)="onChange($event, input1.value)" [value]="content" />\
   <button (click)="newContentReady()">send content to be worked on</button>\
   '
