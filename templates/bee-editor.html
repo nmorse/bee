@@ -1,0 +1,27 @@
+<h1>Bee's Mind</h1>
+
+
+<h2>Bee\'s mind</h2>
+<div id="graph_vis"></div>
+
+<input #input1 (keyup)="onChange($event, input1.value)" [value]="content" />
+<button (click)="newContentReady()">send content to be worked on</button>
+
+
+<div id="edit_mode_ui">
+    <div class="row"><div class="col-md-2"><button id="copy_node" type="button" class="btn btn-default">copy node</button>
+                                           <button id="add_node" type="button" class="btn btn-default">add node</button></div>
+                     <div class="col-md-2"><button id="add_edge" type="button" class="btn btn-default" data-toggle="button">add edge</button></div>
+    </div>
+    <div class="row"><div class="col-md-2"><button id="delete_node" type="button" class="btn btn-default">delete node</button></div>
+                     <div class="col-md-2"><button id="delete_edge" type="button" class="btn btn-default">delete edge</button></div>
+    </div>
+    <div><h4 id="node_input_header">Node data (<span>0</span> Selected)</h4>
+        <div id="node_editor">
+        </div>
+    </div>
+    <div><h4 id="edge_input_header">Edge data (<span>0</span> Selected)</h4>
+        <div id="edge_editor">
+        </div>
+    </div>
+</div>
