@@ -171,6 +171,7 @@ class BeesMind {
       $(document).trigger("load_hbg", [{"graph":params.example, "view_index":0}, ["examples"]]);
     }
     else {
+      // ToDo send the ng2 Event... here
       $("#nav_load").trigger('click');
     }
   }

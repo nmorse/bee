@@ -1,6 +1,5 @@
 <h1>Bee's Mind</h1>
 
-
 <h2>Bee\'s mind</h2>
 <div id="graph_vis"></div>
 
@@ -9,12 +8,12 @@
 
 
 <div id="edit_mode_ui">
-    <div class="row"><div class="col-md-2"><button id="copy_node" type="button" class="btn btn-default">copy node</button>
-                                           <button id="add_node" type="button" class="btn btn-default">add node</button></div>
-                     <div class="col-md-2"><button id="add_edge" type="button" class="btn btn-default" data-toggle="button">add edge</button></div>
+    <div class="row"><div class="col-md-2"><button (click)="copy_node()" class="btn btn-default">copy node</button>
+                                           <button (click)="add_node()" class="btn btn-default">add node</button></div>
+                     <div class="col-md-2"><button (click)="add_edge()" class="btn btn-default" data-toggle="button">add edge</button></div>
     </div>
-    <div class="row"><div class="col-md-2"><button id="delete_node" type="button" class="btn btn-default">delete node</button></div>
-                     <div class="col-md-2"><button id="delete_edge" type="button" class="btn btn-default">delete edge</button></div>
+    <div class="row"><div class="col-md-2"><button (click)="delete_node()" class="btn btn-default">delete node</button></div>
+                     <div class="col-md-2"><button (click)="delete_edge()" class="btn btn-default">delete edge</button></div>
     </div>
     <div><h4 id="node_input_header">Node data (<span>0</span> Selected)</h4>
         <div id="node_editor">
