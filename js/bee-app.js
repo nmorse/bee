@@ -23,6 +23,17 @@ var BeesMind = (function () {
     BeesMind.prototype.onChange = function (e, new_value) {
         this.content = new_value;
     };
+    BeesMind.prototype.add_node = function () {
+        alert("add_node");
+        var ns = this.g.add({ "nodes": [{ "data": { "view": { "position": { "x": 80, "y": 60 } } } }] });
+        var d = ns[0].data();
+        var pos = d.view.position;
+        ns[0].position({ x: pos.x, y: pos.y });
+        setTimeout(function () {
+            g.$('*').unselect();
+            ns[0].select();
+        }, 50);
+    };
     BeesMind.prototype.initBeeEdit = function () {
         var args = document.location.search.slice(1).split('&');
         var params = {};
@@ -32,7 +43,7 @@ var BeesMind = (function () {
                 params[key_val_arr[0]] = decodeURIComponent(key_val_arr[1]);
             }
         });
-        nodes_editor = new JSONEditor($('#node_editor')[0], {
+        var nodes_editor = new JSONEditor($('#node_editor')[0], {
             theme: 'bootstrap3',
             schema: {
                 "type": "array",
@@ -113,7 +124,7 @@ var BeesMind = (function () {
             disable_edit_json: true,
             disable_properties: false
         });
-        edges_editor = new JSONEditor($('#edge_editor')[0], {
+        var edges_editor = new JSONEditor($('#edge_editor')[0], {
             theme: 'bootstrap3',
             schema: {
                 "type": "array",
