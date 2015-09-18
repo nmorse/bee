@@ -173,10 +173,10 @@ var BeesMind = (function () {
             disable_properties: true
         });
         if (params.example) {
-            $(document).trigger("load_hbg", [{ "graph": params.example, "view_index": 0 }, ["examples"]]);
+            this.g = { nodes: [], edges: [] };
         }
         else {
-            $("#nav_load").trigger('click');
+            this.g = { nodes: [], edges: [] };
         }
     };
     BeesMind = __decorate([

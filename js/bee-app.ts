@@ -182,11 +182,12 @@ class BeesMind {
     });
 
     if (params.example) {
-      $(document).trigger("load_hbg", [{"graph":params.example, "view_index":0}, ["examples"]]);
+      //this.g = graph_examples[params.example];
+      //this.g = mix_in_view(this.g, 0);
+      this.g = {nodes:[], edges:[]};
     }
     else {
-      // ToDo send the ng2 Event... here
-      $("#nav_load").trigger('click');
+      this.g = {nodes:[], edges:[]};
     }
   }
 
