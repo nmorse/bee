@@ -29,10 +29,6 @@ var BeesMind = (function () {
         var d = ns[0].data();
         var pos = d.view.position;
         ns[0].position({ x: pos.x, y: pos.y });
-        setTimeout(function () {
-            g.$('*').unselect();
-            ns[0].select();
-        }, 50);
     };
     BeesMind.prototype.initBeeEdit = function () {
         var args = document.location.search.slice(1).split('&');
@@ -173,10 +169,16 @@ var BeesMind = (function () {
             disable_properties: true
         });
         if (params.example) {
-            this.g = { nodes: [], edges: [] };
+            this.g = cytoscape({
+                container: document.getElementById('graph_vis'),
+                ready: function () { console.log('ready'); }
+            });
         }
         else {
-            this.g = { nodes: [], edges: [] };
+            this.g = cytoscape({
+                container: document.getElementById('graph_vis'),
+                ready: function () { console.log('ready'); }
+            });
         }
     };
     BeesMind = __decorate([

@@ -34,10 +34,10 @@ class BeesMind {
     var d = ns[0].data();
     var pos = d.view.position;
     ns[0].position({x: pos.x, y: pos.y});
-    setTimeout(function() {
-      g.$('*').unselect();
-      ns[0].select();
-    }, 50);
+    //setTimeout(function() {
+    //  this.g.$('*').unselect();
+    //  ns[0].select();
+    //}, 50);
 
   }
 
@@ -184,10 +184,16 @@ class BeesMind {
     if (params.example) {
       //this.g = graph_examples[params.example];
       //this.g = mix_in_view(this.g, 0);
-      this.g = {nodes:[], edges:[]};
+      this.g = cytoscape({
+  container: document.getElementById('graph_vis'),
+  ready: function(){ console.log('ready') }
+});
     }
     else {
-      this.g = {nodes:[], edges:[]};
+      this.g = cytoscape({
+  container: document.getElementById('graph_vis'),
+  ready: function(){ console.log('ready') }
+});
     }
   }
 
